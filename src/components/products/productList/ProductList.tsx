@@ -18,7 +18,7 @@ const ProductList = () => {
   return (
     <div>
       {productList.map((product) => (
-        <ProductItem key={crypto.randomUUID()} product={product} />
+        <ProductItem key={product.id} product={product} />
       ))}
     </div>
   );
