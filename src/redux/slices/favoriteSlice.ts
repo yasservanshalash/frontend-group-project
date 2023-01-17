@@ -41,6 +41,7 @@ const favoriteSlice = createSlice({
         const favItem = state.favorite.filter(
           (item: ProductType) => item.title !== action.payload.title
         );
+        state.favorite = favItem;
       }
     },
   },
