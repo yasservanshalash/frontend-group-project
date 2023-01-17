@@ -2,17 +2,17 @@ import { ProductType } from "./../../types/types";
 import { createSlice } from "@reduxjs/toolkit";
 
 type IntialState = {
-  products: ProductType[];
+  productsData: ProductType[];
 };
 const initialState: IntialState = {
-  products: [],
+  productsData: [],
 };
 const productSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
     getProduct: (state, action) => {
-      state.products = action.payload;
+      state.productsData = action.payload;
     },
   },
 });
