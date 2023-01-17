@@ -11,7 +11,7 @@ const productSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
-    getProduct: (state, action) => {
+    getProductData: (state, action) => {
       state.products = action.payload;
     },
   },
