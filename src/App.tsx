@@ -12,7 +12,6 @@ import Cart from "./pages/cart/Cart";
 function App() {
   return (
     <div className="App">
-      <Router>
         <NavBar />
         <Routes>
           <Route path="" element={<Home />}></Route>
@@ -21,7 +20,6 @@ function App() {
           <Route path="/wishlist" element={<WishList />}></Route>
           <Route path="/cart" element={<Cart />}></Route>
         </Routes>
-      </Router>
     </div>
   );
 }
