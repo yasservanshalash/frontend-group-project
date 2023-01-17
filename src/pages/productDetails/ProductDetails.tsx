@@ -24,12 +24,12 @@ const ProductDetails = () => {
     <div>
       {
         !product ? <h1>Loading</h1> : <div className='itemDetail'>
-        <img src={product?.image} alt={product?.title} className="productImgDetail"/>
+        <img src={product.image} alt={product.title} className="productImgDetail"/>
         <div className='productInfo'>
-        <h1>{product?.title}</h1>
-        <p>{product?.category}</p>
-        <p>{product?.description}</p>
-        <p>{product?.price}</p>
+        <h1>{product.title}</h1>
+        <p>{product.category}</p>
+        <p>{product.description}</p>
+        <p>{product.price === 1 ? "loading" : product.price}</p>
         </div>
     </div>
       }    
