@@ -1,5 +1,7 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 
+import { cartSliceActions } from "../../../redux/slices/cartSlice";
 import { ProductType } from "../../../types/types";
 import { Link } from "react-router-dom";
 
@@ -7,6 +9,10 @@ type Prop = {
   product: ProductType;
 };
 const ProductItem = ({ product }: Prop) => {
+  const dispatch = useDispatch();
+  const addToCartHandler = () => {
+    dispatch(cartSliceActions.addTocart(product));
+  };
   return (
     <div>
       <p>ID: {product.id}</p>
@@ -19,7 +25,7 @@ const ProductItem = ({ product }: Prop) => {
       <Link to={`/products/${product.id}`}>
         <button>More detail</button>
       </Link>
-      <button>Add to Cart</button>
+      <button onClick={addToCartHandler}>Add to Cart</button>
     </div>
   );
 };

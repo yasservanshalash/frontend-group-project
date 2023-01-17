@@ -10,7 +10,7 @@ const initialState: IntialState = {
   cartList: [],
 };
 
-const cartProductSlice = createSlice({
+const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
@@ -20,8 +20,9 @@ const cartProductSlice = createSlice({
       );
       if (index !== -1) {
         state.cartList[index].quantity += 1;
+      } else {
+        state.cartList.push(action.payload);
       }
-      state.cartList.push(action.payload);
     },
     incrementQuantity: (state, action) => {
       const index = state.cartList.findIndex(
@@ -43,13 +44,13 @@ const cartProductSlice = createSlice({
     },
     removeCartItem: (state, action) => {
       const removeItem = state.cartList.filter(
-        (item) => item.id !== action.payload
+        (item) => item.id !== action.payload.id
       );
       state.cartList = removeItem;
     },
   },
 });
 
-export const cartProductSliceActions = cartProductSlice.actions;
-const cartProductReducer = cartProductSlice.reducer;
-export default cartProductReducer;
+export const cartSliceActions = cartSlice.actions;
+const cartSliceReducer = cartSlice.reducer;
+export default cartSliceReducer;
