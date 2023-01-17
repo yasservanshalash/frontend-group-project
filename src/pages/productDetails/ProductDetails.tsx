@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -6,34 +6,34 @@ import { AppDispatch, RootState } from "../../redux/store";
 import getProductDetailData from "../../redux/thunk/productDetail";
 import { productDetailSliceActions } from "../../redux/slices/productDetailSlice";
 import { ProductType } from "../../types/types";
+import { getProductData } from "../../redux/thunk/products";
+import { productSliceActions } from "../../redux/slices/producttSlice";
 
+const url = "https://fakestoreapi.com/products/"
 const ProductDetails = () => {
-  const proDetail = useSelector(
-    (state: RootState) => state.productDetails.productDetails
-  );
   const { id } = useParams();
-  const product = useSelector((state: RootState) => state.productList.products);
-  const detail = product.filter((item) => item.id === Number(id));
-  console.log(detail, "detail");
-  console.log(detail[0].title);
-  console.log(typeof id, "id type");
+  const product: ProductType = useSelector((state: RootState) => state.productDetails.productDetails);
+  console.log(product, "product");
   const dispatch = useDispatch<AppDispatch>();
 
-  const url = `https://fakestoreapi.com/products/${id} `;
-  console.log(url, "my url");
-  console.log(proDetail, "proooo");
-  useEffect(() => {
-    dispatch(getProductDetailData(url));
-  }, [dispatch, url]);
+  useEffect(() => { 
+    dispatch(getProductDetailData(url + id))
+  }, [dispatch]);
+
   return (
     <div>
-      <p>
-        Name:
-        {detail.map((item: ProductType) => (
-          <p>ID:{item?.id}</p>
-        ))}
-      </p>
+      {
+        !product ? <h1>Loading</h1> : <div className='itemDetail'>
+        <img src={product?.image} alt={product?.title} className="productImgDetail"/>
+        <div className='productInfo'>
+        <h1>{product?.title}</h1>
+        <p>{product?.category}</p>
+        <p>{product?.description}</p>
+        <p>{product?.price}</p>
+        </div>
     </div>
+      }    
+      </div>
   );
 };
 
