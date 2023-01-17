@@ -25,7 +25,9 @@ const ProductItem = ({ product }: Prop) => {
       <Link to={`/products/${product.id}`}>
         <button>More detail</button>
       </Link>
-      <button onClick={addToCartHandler}>Add to Cart</button>
+      <Link to="/cartlist">
+        <button onClick={addToCartHandler}>Add to Cart</button>
+      </Link>
     </div>
   );
 };
