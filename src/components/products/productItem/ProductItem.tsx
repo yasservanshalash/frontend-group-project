@@ -4,14 +4,20 @@ import { useDispatch } from "react-redux";
 import { cartSliceActions } from "../../../redux/slices/cartSlice";
 import { ProductType } from "../../../types/types";
 import { Link } from "react-router-dom";
+import { favoriteSliceActions } from "../../../redux/slices/favoriteSlice";
 
 type Prop = {
   product: ProductType;
 };
 const ProductItem = ({ product }: Prop) => {
   const dispatch = useDispatch();
+
   const addToCartHandler = () => {
     dispatch(cartSliceActions.addTocart(product));
+  };
+
+  const addToWishListHandler = () => {
+    dispatch(favoriteSliceActions.addFavorite(product));
   };
   return (
     <div>
@@ -28,6 +34,7 @@ const ProductItem = ({ product }: Prop) => {
       <Link to="/cartlist">
         <button onClick={addToCartHandler}>Add to Cart</button>
       </Link>
+      <button onClick={addToWishListHandler}>Add to wishList</button>
     </div>
   );
 };
