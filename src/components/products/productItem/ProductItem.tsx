@@ -1,11 +1,18 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 
+import { cartSliceActions } from "../../../redux/slices/cartSlice";
 import { ProductType } from "../../../types/types";
+import { Link } from "react-router-dom";
 
 type Prop = {
   product: ProductType;
 };
 const ProductItem = ({ product }: Prop) => {
+  const dispatch = useDispatch();
+  const addToCartHandler = () => {
+    dispatch(cartSliceActions.addTocart(product));
+  };
   return (
     <div>
       <p>ID: {product.id}</p>
