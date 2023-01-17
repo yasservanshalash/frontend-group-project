@@ -7,36 +7,33 @@ import getProductDetailData from "../../redux/thunk/productDetail";
 import { productDetailSliceActions } from "../../redux/slices/productDetailSlice";
 import { ProductType } from "../../types/types";
 import { getProductData } from "../../redux/thunk/products";
+import { productSliceActions } from "../../redux/slices/producttSlice";
 
+const url = "https://fakestoreapi.com/products/"
 const ProductDetails = () => {
-  const [item, setItem] = useState<ProductType[]>([])
   const { id } = useParams();
-  const products = useSelector((state: RootState) => state.productList.products);
-  console.log(products, 'products');
-  const product: ProductType[] = products.filter((item: ProductType) => item.id === Number(id));
-  console.log(product);
-
+  const product: ProductType = useSelector((state: RootState) => state.productDetails.productDetails);
+  console.log(product, "product");
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => { 
-    dispatch(getProductData())
-    setItem(product);
-
-  }, [products]);
+    dispatch(getProductDetailData(url + id))
+  }, [dispatch]);
 
   return (
     <div>
       {
-        item.length === 0 ? <h1>Loading</h1> : <div className='itemDetail'>
-        <img src={item[0]?.image} alt={item[0]?.title} className="productImgDetail"/>
+        !product ? <h1>Loading</h1> : <div className='itemDetail'>
+        <img src={product?.image} alt={product?.title} className="productImgDetail"/>
         <div className='productInfo'>
-        <h1>{item[0]?.title}</h1>
-        <p>{item[0]?.category}</p>
-        <p>{item[0]?.description}</p>
-        <p>${item[0]?.price}</p>
+        <h1>{product?.title}</h1>
+        <p>{product?.category}</p>
+        <p>{product?.description}</p>
+        <p>{product?.price}</p>
         </div>
     </div>
-      }    </div>
+      }    
+      </div>
   );
 };
 
