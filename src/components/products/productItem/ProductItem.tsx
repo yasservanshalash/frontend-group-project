@@ -1,6 +1,7 @@
 import React from "react";
 
 import { ProductType } from "../../../types/types";
+import { Link } from "react-router-dom";
 
 type Prop = {
   product: ProductType;
@@ -15,8 +16,10 @@ const ProductItem = ({ product }: Prop) => {
       <img src={product.image} alt="product" height="40px" width="50px" />
       <p>Quantity:{product.quantity}</p>
       <p>Rating:{product.rating.rate}</p>
+      <Link to={`/products/${product.id}`}>
+        <button>More detail</button>
+      </Link>
       <button>Add to Cart</button>
-      <button>More detail</button>
     </div>
   );
 };
