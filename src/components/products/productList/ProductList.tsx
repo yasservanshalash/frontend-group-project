@@ -5,7 +5,9 @@ import { AppDispatch, RootState } from "../../../redux/store";
 import { getProductData } from "../../../redux/thunk/products";
 import ProductItem from "../productItem/ProductItem";
 
-const ProductList = () => {
+import {ProductType} from "../../../types/types"
+
+const ProductList = ({userInput} : {userInput: string}) => {
   const productList = useSelector(
     (state: RootState) => state.productList.products
   );
@@ -17,7 +19,7 @@ const ProductList = () => {
   console.log(productList, "products");
   return (
     <div>
-      {productList.map((product) => (
+      {productList.length === 0 ? <h1>Loading...</h1> : productList.filter((product: ProductType) => product.title.toLowerCase().includes(userInput.toLowerCase())).map((product: ProductType) => (
         <ProductItem key={product.id} product={product} />
       ))}
     </div>
