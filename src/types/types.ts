@@ -6,5 +6,5 @@ export type ProductType = {
   rating: { rate: number; count: number };
   description: string;
   category: string;
-  quantity?: number;
+  quantity: number;
 };
