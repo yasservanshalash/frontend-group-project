@@ -5,10 +5,10 @@ import { ProductType } from "../../../types/types";
 import WishListItem from "../wishListItem/WishListItem";
 
 const WishListPage = () => {
-  const wishList = useSelector((state: RootState) => state.favoriteReducer.favorite);
+  const wishList = useSelector((state: RootState) => state.favoriteList.favorite);
   return (
     <div>
-      {wishList.map((item) => (
+      {wishList.map((item: ProductType) => (
         <WishListItem item={item} />
       ))}
     </div>
