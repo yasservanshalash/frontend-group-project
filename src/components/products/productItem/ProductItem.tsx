@@ -25,16 +25,15 @@ const ProductItem = ({ product }: Prop) => {
     dispatch(favoriteSliceActions.addFavorite(product));
   };
   return (
-    <Box sx={{display: "flex", justifyContent: "flex-start", alignItems: "center", mt: 3}}>
+    <Box sx={{display: "flex", justifyContent: "flex-start", alignItems: "center", mt: 3, gap: "20px", lineHeight: "1px"}}>
       <Box>
       <img src={product.image} alt="product" width="100px"/>
 
         </Box>
-        <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "flex-start", p: 0}}>
+        <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "flex-start"}}>
         <p>Name: {product.title}</p>
-      <p>Category:{product.category}</p>
+        <Rating name="half-rating-read" defaultValue={product.rating.rate} precision={0.5} readOnly />
       <p>Price:{product.price}</p>
-      <Rating name="half-rating-read" defaultValue={product.rating.rate} precision={0.5} readOnly />
       <Box sx={{display: "flex", gap: "10px"}}>
         <IconButton component={Link} to="/cartlist" onClick={addToCartHandler}>
           <ShoppingCartIcon />
