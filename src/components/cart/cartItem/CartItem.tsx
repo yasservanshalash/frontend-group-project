@@ -30,7 +30,6 @@ const CartItem = ({ item }: Prop) => {
       <button onClick={decrementQuantityHandler}>-</button>
       <span>{item.quantity}</span>
       <button onClick={incrementQuantityHandler}>+</button>
-      <span>{item.total}</span>
     </div>
   );
 };
