@@ -7,6 +7,7 @@ import ProductItem from "../productItem/ProductItem";
 
 import {ProductType} from "../../../types/types"
 
+import "./ProductList.css"
 const ProductList = ({userInput} : {userInput: string}) => {
   const productList = useSelector(
     (state: RootState) => state.productList.products
@@ -18,7 +19,7 @@ const ProductList = ({userInput} : {userInput: string}) => {
   }, [dispatch]);
   console.log(productList, "products");
   return (
-    <div>
+    <div className="productList">
       {productList.length === 0 ? <h1>Loading...</h1> : productList.filter((product: ProductType) => product.title.toLowerCase().includes(userInput.toLowerCase())).map((product: ProductType) => (
         <ProductItem key={product.id} product={product} />
       ))}

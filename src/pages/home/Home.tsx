@@ -6,7 +6,7 @@ import "./Home.css";
 const Home = () => {
   return (
     <div>
-      <AliceCarousel autoPlay autoPlayInterval={500}>
+      {/* <AliceCarousel autoPlay autoPlayInterval={500}>
         <img
           src={"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"}
           className="sliderimg"
@@ -27,7 +27,7 @@ const Home = () => {
           src={"https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg"}
           className="sliderimg"
         />
-      </AliceCarousel>
+      </AliceCarousel> */}
     </div>
   );
 };
