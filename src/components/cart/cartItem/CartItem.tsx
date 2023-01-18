@@ -1,6 +1,6 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 
+import { useDispatch } from "react-redux";
 import { ProductType } from "../../../types/types";
 import { cartSliceActions } from "../../../redux/slices/cartSlice";
 
@@ -19,9 +19,7 @@ const CartItem = ({ item }: Prop) => {
   const decrementQuantityHandler = () => {
     dispatch(cartSliceActions.decrementQuantity(item));
   };
-  const getTotalPriceHandler = () => {
-    dispatch(cartSliceActions.getCartTotalPrice(item));
-  };
+
   return (
     <div>
       <p>ID:{item.id}</p>
@@ -32,7 +30,6 @@ const CartItem = ({ item }: Prop) => {
       <button onClick={decrementQuantityHandler}>-</button>
       <span>{item.quantity}</span>
       <button onClick={incrementQuantityHandler}>+</button>
-      <button onClick={getTotalPriceHandler}>Total:</button>
       <span>{item.total}</span>
     </div>
   );
