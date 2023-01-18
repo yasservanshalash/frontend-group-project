@@ -12,13 +12,23 @@ import NavBar from "./components/navbar/NavBar";
 import Cart from "./pages/cart/Cart";
 import NavBar2 from "./components/navbar2/NavBar2";
 
+import { createTheme, ThemeProvider } from "@mui/material";
+
 function App() {
   const [userInput, setUserInput] = useState<string>("");
+  const [clicked, setClicked] = useState<boolean>(false); //theme
+
+  const toggletheme = createTheme({
+    palette: {
+      mode: clicked ? "dark" : "light",
+    },
+  });
 
   return (
+    <ThemeProvider theme={toggletheme}>
     <div className="App">
       {/* <NavBar /> */}
-      <NavBar2 setUserInput={setUserInput}/>
+      <NavBar2 setUserInput={setUserInput} clicked={clicked} setClicked={setClicked}/>
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/products" element={<Products userInput={userInput}/>}></Route>
@@ -28,6 +38,7 @@ function App() {
       </Routes>
 
     </div>
+    </ThemeProvider>
   );
 }
 
