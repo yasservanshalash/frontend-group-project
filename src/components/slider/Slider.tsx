@@ -16,6 +16,8 @@ import ImageFour from '../../assets/img04.jpg';
 import ImageFive from '../../assets/img05.jpg';
 import ImageSix from '../../assets/img06.jpg';
 
+import './slider.css';
+
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -66,6 +68,7 @@ const Slider = () => {
 
   return (
     <Box 
+    className="sliderimg"
     textAlign="center"
     sx={{ 
       maxWidth: 1200, 
@@ -95,7 +98,7 @@ const Slider = () => {
         enableMouseEvents
       >
         {images.map((step, index) => (
-          <div key={step.label}>
+          <div key={step.label} >
             {Math.abs(activeStep - index) <= 2 ? (
               <Box
                 component="img"
