@@ -13,6 +13,9 @@ const ProductList = ({ userInput }: { userInput: string }) => {
   const productList = useSelector(
     (state: RootState) => state.productList.products
   );
+  const filteredList = useSelector(
+    (state: RootState) => state.productList.filteredProduct
+  );
   const dispatch = useDispatch<AppDispatch>();
 
   // SORTING HANDLER
@@ -29,6 +32,10 @@ const ProductList = ({ userInput }: { userInput: string }) => {
   const sortPriceDescendingHandler = () => {
     dispatch(productSliceActions.sortByPriceDescending());
   };
+
+  const sortByCategoryHandler = (category: string) => {
+    dispatch(productSliceActions.sortByCategory(category));
+  };
   useEffect(() => {
     dispatch(getProductData());
   }, [dispatch]);
@@ -40,12 +47,18 @@ const ProductList = ({ userInput }: { userInput: string }) => {
         <button onClick={sortDescendingHandler}>Descending</button>
         <button onClick={sortPriceAscendingHandler}>PriceAscending</button>
         <button onClick={sortPriceDescendingHandler}>PriceDescending</button>
+        <button onClick={() => sortByCategoryHandler("jewelery")}>
+          Sort Jewelery
+        </button>
+        <button onClick={() => sortByCategoryHandler("men's clothing")}>
+          SortByCategory
+        </button>
       </div>
       <div className="productList">
         {productList.length === 0 ? (
           <h1>Loading...</h1>
         ) : (
-          productList
+          filteredList
             .filter((product: ProductType) =>
               product.title.toLowerCase().includes(userInput.toLowerCase())
             )
