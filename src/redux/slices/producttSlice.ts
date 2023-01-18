@@ -3,9 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 type IntialState = {
   products: ProductType[];
+  filteredProduct: ProductType[];
 };
 const initialState: IntialState = {
   products: [],
+  filteredProduct: [],
 };
 const productSlice = createSlice({
   name: "products",
@@ -13,6 +15,7 @@ const productSlice = createSlice({
   reducers: {
     getProductData: (state, action) => {
       state.products = action.payload;
+      state.filteredProduct = action.payload;
     },
     sortAscending: (state) => {
       state.products.sort((a, b) =>
@@ -33,6 +36,14 @@ const productSlice = createSlice({
       state.products = state.products.sort((r1, r2) =>
         r1.price < r2.price ? 1 : r1.price > r2.price ? -1 : 0
       );
+    },
+    sortByCategory: (state, action) => {
+      state.filteredProduct = state.products.filter(
+        (item) => item.category === action.payload
+      );
+
+      // if(action.payload==="all"){
+      // state.products=
     },
   },
 });
