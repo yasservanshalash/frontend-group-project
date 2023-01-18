@@ -7,4 +7,5 @@ export type ProductType = {
   description: string;
   category: string;
   quantity: number;
+  total: number;
 };
