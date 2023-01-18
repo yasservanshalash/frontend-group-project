@@ -1,7 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { favoriteSliceActions } from "../../../redux/slices/favoriteSlice";
+import DeleteIcon from "@mui/icons-material/Delete";
 
+import { favoriteSliceActions } from "../../../redux/slices/favoriteSlice";
 import { ProductType } from "../../../types/types";
 
 type Prop = {
@@ -19,9 +20,7 @@ const WishListItem = ({ item }: Prop) => {
       <p>Category:{item.category}</p>
       <p>Price:{item.price}</p>
       <img src={item.image} alt="favProduct" height="40px" width="50px" />
-      <p>Quantity:{item.quantity}</p>
-      <p>Rating:{item.rating.rate}</p>
-      <button onClick={removeWishListItem}>Remove</button>
+      <DeleteIcon onClick={removeWishListItem}>Remove</DeleteIcon>
     </div>
   );
 };

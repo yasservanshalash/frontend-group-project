@@ -1,5 +1,5 @@
 import React from "react";
-
+import DeleteIcon from "@mui/icons-material/Delete";
 import { useDispatch } from "react-redux";
 import { ProductType } from "../../../types/types";
 import { cartSliceActions } from "../../../redux/slices/cartSlice";
@@ -26,7 +26,7 @@ const CartItem = ({ item }: Prop) => {
       <p>Name:{item.title}</p>
       <p>Price:{item.price}</p>
       <img src={item.image} alt="product" height="100px" width="70px"></img>
-      <button onClick={removeFromCartHandler}>Remove</button>
+      <DeleteIcon onClick={removeFromCartHandler}>Remove</DeleteIcon>
       <button onClick={decrementQuantityHandler}>-</button>
       <span>{item.quantity}</span>
       <button onClick={incrementQuantityHandler}>+</button>
