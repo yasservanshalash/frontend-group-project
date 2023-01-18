@@ -6,8 +6,7 @@ import CartItem from "../cartItem/CartItem";
 
 const CartList = () => {
   const cartList = useSelector((state: RootState) => state.cartList.cartList);
-  let totalprice = cartList.reduce((accum, item) => accum + item.total, 0);
-  console.log(cartList, "cartList");
+  const totalprice = cartList.reduce((accum, item) => accum + item.total, 0);
   return (
     <div>
       <h1>Cart list</h1>
