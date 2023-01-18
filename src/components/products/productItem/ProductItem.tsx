@@ -1,10 +1,16 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import WishListIcon from "@mui/icons-material/Favorite";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import Rating from "@mui/material/Rating";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { green } from "@mui/material/colors";
 
 import { cartSliceActions } from "../../../redux/slices/cartSlice";
 import { ProductType } from "../../../types/types";
 import { Link } from "react-router-dom";
 import { favoriteSliceActions } from "../../../redux/slices/favoriteSlice";
+import CartItem from "../../cart/cartItem/CartItem";
 
 type Prop = {
   product: ProductType;
@@ -15,7 +21,7 @@ const ProductItem = ({ product }: Prop) => {
   const addToCartHandler = () => {
     dispatch(cartSliceActions.addTocart(product));
   };
-  
+
   const addToWishListHandler = () => {
     dispatch(favoriteSliceActions.addFavorite(product));
   };
@@ -27,15 +33,23 @@ const ProductItem = ({ product }: Prop) => {
       <p>Price:{product.price}</p>
       <img src={product.image} alt="product" height="40px" width="50px" />
       <p>Quantity:{product.quantity}</p>
-      <p>Rating:{product.rating.rate}</p>
+      <Rating name="customized-10" defaultValue={2} max={5} />
+      <br />
+      <Link to="/wishlist">
+        <WishListIcon onClick={addToWishListHandler} sx={{ color: green[700] }}>
+          Add to WishList
+        </WishListIcon>
+      </Link>
       <Link to="/cartlist">
-        <button onClick={addToCartHandler}>Add to Cart</button>
+        <ShoppingCartIcon onClick={addToCartHandler} sx={{ color: green[700] }}>
+          Add to Cart
+        </ShoppingCartIcon>
       </Link>
-
       <Link to={`/products/${product.id}`}>
-        <button>More detail</button>
+        <ArrowForwardIosIcon sx={{ color: green[700] }}>
+          More detail
+        </ArrowForwardIosIcon>
       </Link>
-      <button onClick={addToWishListHandler}>Add to WishList</button>
     </div>
   );
 };
