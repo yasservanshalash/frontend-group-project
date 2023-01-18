@@ -1,8 +1,12 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
+.sliderimg {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +39,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

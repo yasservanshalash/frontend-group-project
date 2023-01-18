@@ -1,4 +1,5 @@
 import React from "react";
+
 import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -18,15 +19,17 @@ function App() {
   return (
     <div className="App">
       {/* <NavBar /> */}
-      <NavBar2 setUserInput={setUserInput}/>
+      <NavBar2 setUserInput={setUserInput} />
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/products" element={<Products userInput={userInput}/>}></Route>
+        <Route
+          path="/products"
+          element={<Products userInput={userInput} />}
+        ></Route>
         <Route path="/products/:id" element={<ProductDetails />}></Route>
         <Route path="/wishlist" element={<WishList />}></Route>
         <Route path="/cartlist" element={<Cart />}></Route>
       </Routes>
-
     </div>
   );
 }
