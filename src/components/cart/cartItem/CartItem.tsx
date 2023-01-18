@@ -1,6 +1,6 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 
+import { useDispatch } from "react-redux";
 import { ProductType } from "../../../types/types";
 import { cartSliceActions } from "../../../redux/slices/cartSlice";
 
@@ -13,12 +13,23 @@ const CartItem = ({ item }: Prop) => {
   const removeFromCartHandler = () => {
     dispatch(cartSliceActions.removeCartItem(item));
   };
+  const incrementQuantityHandler = () => {
+    dispatch(cartSliceActions.incrementQuantity(item));
+  };
+  const decrementQuantityHandler = () => {
+    dispatch(cartSliceActions.decrementQuantity(item));
+  };
+
   return (
     <div>
       <p>ID:{item.id}</p>
       <p>Name:{item.title}</p>
+      <p>Price:{item.price}</p>
       <img src={item.image} alt="product" height="100px" width="70px"></img>
       <button onClick={removeFromCartHandler}>Remove</button>
+      <button onClick={decrementQuantityHandler}>-</button>
+      <span>{item.quantity}</span>
+      <button onClick={incrementQuantityHandler}>+</button>
     </div>
   );
 };

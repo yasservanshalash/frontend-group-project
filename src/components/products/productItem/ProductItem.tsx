@@ -11,9 +11,11 @@ type Prop = {
 };
 const ProductItem = ({ product }: Prop) => {
   const dispatch = useDispatch();
+
   const addToCartHandler = () => {
     dispatch(cartSliceActions.addTocart(product));
   };
+  
   const addToWishListHandler = () => {
     dispatch(favoriteSliceActions.addFavorite(product));
   };
@@ -29,6 +31,7 @@ const ProductItem = ({ product }: Prop) => {
       <Link to="/cartlist">
         <button onClick={addToCartHandler}>Add to Cart</button>
       </Link>
+
       <Link to={`/products/${product.id}`}>
         <button>More detail</button>
       </Link>
