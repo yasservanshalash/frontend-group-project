@@ -12,6 +12,7 @@ import WishList from "./pages/wishlist/WishList";
 import NavBar from "./components/navbar/NavBar";
 import Cart from "./pages/cart/Cart";
 import NavBar2 from "./components/navbar2/NavBar2";
+import Footer from "./components/footer/Footer";
 
 function App() {
   const [userInput, setUserInput] = useState<string>("");
@@ -30,6 +31,7 @@ function App() {
         <Route path="/wishlist" element={<WishList />}></Route>
         <Route path="/cartlist" element={<Cart />}></Route>
       </Routes>
+      <Footer />
     </div>
   );
 }
