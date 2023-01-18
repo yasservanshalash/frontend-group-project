@@ -7010,6 +7010,7 @@ __metadata:
     "@types/react-dom": ^18.0.0
     "@types/redux": ^3.6.0
     react: ^18.2.0
+    react-alice-carousel: ^2.7.0
     react-dom: ^18.2.0
     react-redux: ^8.0.5
     react-router-dom: ^6.6.2
@@ -9137,11 +9138,11 @@ __metadata:
   linkType: hard
 
 "minimatch@npm:^5.0.1":
-  version: 5.1.4
-  resolution: "minimatch@npm:5.1.4"
+  version: 5.1.5
+  resolution: "minimatch@npm:5.1.5"
   dependencies:
     brace-expansion: ^2.0.1
-  checksum: 0de6d7d154e70d12487b30a7bfcb74bd15fd1f1ec007a2516699ba76e63f78ca2e5016c200b242ed75123aff8dcccf49947f71b629fb1b1f221c8e76a13ed8de
+  checksum: 2eca85c49d69b572c1cc7036a870fab781961bee5654dd8ae65f1c51e51458b83f89c53ae5a5c76beca34b8c646e2351ac74957b0f8691df21045d7e1f42947d
   languageName: node
   linkType: hard
 
@@ -10925,6 +10926,17 @@ __metadata:
     iconv-lite: 0.4.24
     unpipe: 1.0.0
   checksum: 5362adff1575d691bb3f75998803a0ffed8c64eabeaa06e54b4ada25a0cd1b2ae7f4f5ec46565d1bec337e08b5ac90c76eaa0758de6f72a633f025d754dec29e
+  languageName: node
+  linkType: hard
+
+"react-alice-carousel@npm:^2.7.0":
+  version: 2.7.0
+  resolution: "react-alice-carousel@npm:2.7.0"
+  dependencies:
+    vanilla-swipe: ^2.4.1
+  peerDependencies:
+    react: ">=15.4"
+  checksum: b32a76cf192615c000c8e4876d231b2f1acd75de1ed6f5071f508361d45fcdbbcef369b67f2606b3862522281ef5968bb2f0ba08631be3b2967c38a6fa37a653
   languageName: node
   linkType: hard
 
@@ -12930,6 +12942,13 @@ __metadata:
     convert-source-map: ^1.6.0
     source-map: ^0.7.3
   checksum: 54ce92bec2727879626f623d02c8d193f0c7e919941fa373ec135189a8382265117f5316ea317a1e12a5f9c13d84d8449052a731fe3306fa4beaafbfa4cab229
+  languageName: node
+  linkType: hard
+
+"vanilla-swipe@npm:^2.4.1":
+  version: 2.4.1
+  resolution: "vanilla-swipe@npm:2.4.1"
+  checksum: d054fbf1c6acc705de5780c3e2ec69e5330c58daac188c38f6139623932fad9b42bdd718a1a115895bdf96cf49d447f6b36cda0a487f60d95d9e5f4420ec5e8c
   languageName: node
   linkType: hard
 

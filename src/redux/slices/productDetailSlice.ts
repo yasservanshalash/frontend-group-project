@@ -15,7 +15,8 @@ const initialState: IntialState = {
     description: "",
     category: "",
     quantity: 1,
-}
+    total: 0,
+  },
 };
 const productDetailSlice = createSlice({
   name: "productDetail",
