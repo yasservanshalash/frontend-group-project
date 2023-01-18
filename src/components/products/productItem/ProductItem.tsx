@@ -15,10 +15,7 @@ const ProductItem = ({ product }: Prop) => {
   const addToCartHandler = () => {
     dispatch(cartSliceActions.addTocart(product));
   };
-<<<<<<< HEAD
-
-=======
->>>>>>> 376042a9ca4e74bf88af0ead8aa93fc2c6b940ee
+  
   const addToWishListHandler = () => {
     dispatch(favoriteSliceActions.addFavorite(product));
   };
@@ -34,14 +31,11 @@ const ProductItem = ({ product }: Prop) => {
       <Link to="/cartlist">
         <button onClick={addToCartHandler}>Add to Cart</button>
       </Link>
-<<<<<<< HEAD
-      <button onClick={addToWishListHandler}>Add to wishList</button>
-=======
+
       <Link to={`/products/${product.id}`}>
         <button>More detail</button>
       </Link>
       <button onClick={addToWishListHandler}>Add to WishList</button>
->>>>>>> 376042a9ca4e74bf88af0ead8aa93fc2c6b940ee
     </div>
   );
 };
