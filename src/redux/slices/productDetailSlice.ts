@@ -15,7 +15,7 @@ const initialState: IntialState = {
     description: "",
     category: "",
     quantity: 1,
-  },
+}
 };
 const productDetailSlice = createSlice({
   name: "productDetail",
