@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../redux/store";
 import getProductDetailData from "../../redux/thunk/productDetail";
 import { ProductType } from "../../types/types";
+
+import "./ProductDetails.css"
 // URL
 const url = "https://fakestoreapi.com/products/";
 
@@ -23,7 +25,7 @@ const ProductDetails = () => {
   }, [dispatch]);
   // RENDER
   return (
-    <div>
+    <div className="itemDetailPage">
       {!product ? (
         <h1>Loading</h1>
       ) : (
