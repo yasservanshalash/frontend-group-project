@@ -1,21 +1,22 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import "./ProductList.css";
 import { AppDispatch, RootState } from "../../../redux/store";
-import { getProductData } from "../../../redux/thunk/products";
 import ProductItem from "../productItem/ProductItem";
-
 import { ProductType } from "../../../types/types";
 import { productSliceActions } from "../../../redux/slices/producttSlice";
+import { getProductData } from "../../../redux/thunk/products";
 
-import "./ProductList.css";
 const ProductList = ({ userInput }: { userInput: string }) => {
+  // STATE
   const productList = useSelector(
     (state: RootState) => state.productList.products
   );
   const filteredList = useSelector(
     (state: RootState) => state.productList.filteredProduct
   );
+  // HANDLER
   const dispatch = useDispatch<AppDispatch>();
 
   // SORTING HANDLER
@@ -36,10 +37,11 @@ const ProductList = ({ userInput }: { userInput: string }) => {
   const sortByCategoryHandler = (category: string) => {
     dispatch(productSliceActions.sortByCategory(category));
   };
+  // USE EFFECT
   useEffect(() => {
     dispatch(getProductData());
   }, [dispatch]);
-  console.log(productList, "products");
+  // RENDER
   return (
     <div>
       <div>

@@ -1,12 +1,17 @@
-import React from "react";
 import { useSelector } from "react-redux";
 
 import { RootState } from "../../../redux/store";
 import CartItem from "../cartItem/CartItem";
 
 const CartList = () => {
+  // STATE
   const cartList = useSelector((state: RootState) => state.cartList.cartList);
-  const totalprice = cartList.reduce((accum, item) => accum + (item.quantity * item.price), 0);
+  // CART TOTAL
+  const totalprice = cartList.reduce(
+    (accum, item) => accum + item.quantity * item.price,
+    0
+  );
+  // RENDER
   return (
     <div>
       <h1>Cart list</h1>

@@ -1,10 +1,11 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 import { ProductType } from "./../../types/types";
-
+// TYPE
 type IntialState = {
   productDetails: ProductType;
 };
+// INITIAL STATE
 const initialState: IntialState = {
   productDetails: {
     id: 1,
@@ -17,6 +18,7 @@ const initialState: IntialState = {
     quantity: 1,
   },
 };
+// SLICE
 const productDetailSlice = createSlice({
   name: "productDetail",
   initialState,
@@ -26,7 +28,8 @@ const productDetailSlice = createSlice({
     },
   },
 });
-
+// ACTIONS
 export const productDetailSliceActions = productDetailSlice.actions;
+// REDUCER
 const productDetailReducer = productDetailSlice.reducer;
 export default productDetailReducer;

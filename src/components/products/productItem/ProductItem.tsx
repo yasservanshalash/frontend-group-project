@@ -1,46 +1,40 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useState, useEffect } from "react";
-import { cartSliceActions } from "../../../redux/slices/cartSlice";
-import { ProductType } from "../../../types/types";
 import { Link } from "react-router-dom";
-import { favoriteSliceActions } from "../../../redux/slices/favoriteSlice";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Rating from "@mui/material/Rating";
 import { Box } from "@mui/material";
-import { RootState } from "../../../redux/store";
+
 import "./ProductItem.css";
+import { RootState } from "../../../redux/store";
+import { favoriteSliceActions } from "../../../redux/slices/favoriteSlice";
+import { cartSliceActions } from "../../../redux/slices/cartSlice";
+import { ProductType } from "../../../types/types";
+
+// TYPE
 type Prop = {
   product: ProductType;
 };
 const ProductItem = ({ product }: Prop) => {
+  // STATE
   const favProducts = useSelector(
     (state: RootState) => state.favoriteList.favorite
   );
   const cartProducts = useSelector(
     (state: RootState) => state.cartList.cartList
   );
-  // const [isFavorite, setIsFavorite] = useState(false);
-  // const [isInCart, setIsInCart]  = useState(false);
-  // console.log(favProducts.includes(product) ? true : false)
-  // const [favClicked, setFavClicked] = useState<boolean>(false);
-  // console.log(favClicked)
-  // const [cartClicked, setCartClicked] = useState<boolean>(false);
+  // DISPATCH
   const dispatch = useDispatch();
+  // ICON COLOR CHANGE
   let isInCart = cartProducts.some(
     (item: ProductType) => item.title === product.title
   );
   let isFav = favProducts.some(
     (item: ProductType) => item.title === product.title
   );
-
-  // useEffect(() => {
-  //   favProducts.some((item: ProductType) => item.title === product.title) ? setIsFavorite(true) : setIsFavorite(false);
-  // }, []);
-  // console.log(isFavorite)
+  // HANDLERS
   const addToCartHandler = () => {
     dispatch(cartSliceActions.addTocart(product));
   };
@@ -76,6 +70,7 @@ const ProductItem = ({ product }: Prop) => {
       isFav = !isFav;
     }
   };
+  // RENDER
   return (
     <Box
       sx={{

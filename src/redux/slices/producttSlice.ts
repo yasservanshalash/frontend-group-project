@@ -1,18 +1,21 @@
 import { ProductType } from "./../../types/types";
 import { createSlice } from "@reduxjs/toolkit";
-
+// TYPE
 type IntialState = {
   products: ProductType[];
   filteredProduct: ProductType[];
 };
+// INITIAL STATE
 const initialState: IntialState = {
   products: [],
   filteredProduct: [],
 };
+// SLICE
 const productSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
+    // CASES
     getProductData: (state, action) => {
       state.products = action.payload;
       state.filteredProduct = action.payload;
@@ -41,13 +44,11 @@ const productSlice = createSlice({
       state.filteredProduct = state.products.filter(
         (item) => item.category === action.payload
       );
-
-      // if(action.payload==="all"){
-      // state.products=
     },
   },
 });
-
+// ACTIONS
 export const productSliceActions = productSlice.actions;
+// REDUCER
 const productReducer = productSlice.reducer;
 export default productReducer;

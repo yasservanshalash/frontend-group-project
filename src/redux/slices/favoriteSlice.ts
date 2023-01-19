@@ -1,21 +1,25 @@
-import { ProductType } from "./../../types/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+import { ProductType } from "./../../types/types";
+// GETITEM FROM LOCAL STORAGE
 const items =
   localStorage.getItem("favorite") !== null
     ? JSON.parse(localStorage.getItem("favorite")!)
     : [];
-
+// TYPE
 type IntialState = {
   favorite: ProductType[];
 };
+// INITIALSTATE
 const initialState: IntialState = {
-  favorite: [],
+  favorite: items,
 };
+// SLICE
 const favoriteSlice = createSlice({
   name: "favorite",
   initialState,
   reducers: {
+    // CASES
     addFavorite: (state, action: PayloadAction<ProductType>) => {
       if (
         state.favorite.find(
@@ -25,6 +29,7 @@ const favoriteSlice = createSlice({
         return;
       } else {
         state.favorite.push(action.payload);
+        // SETITEM TO LOCAL STORAGE
         localStorage.setItem(
           "favorite",
           JSON.stringify(state.favorite.map((item: ProductType) => item))
@@ -41,11 +46,17 @@ const favoriteSlice = createSlice({
         const favItem = state.favorite.filter(
           (item: ProductType) => item.title !== action.payload.title
         );
+        localStorage.setItem(
+          "favorite",
+          JSON.stringify(state.favorite.map((item: ProductType) => item))
+        );
         state.favorite = favItem;
       }
     },
   },
 });
+// ACTIONS
 export const favoriteSliceActions = favoriteSlice.actions;
+// REDUCER
 const favoriteReducer = favoriteSlice.reducer;
 export default favoriteReducer;
