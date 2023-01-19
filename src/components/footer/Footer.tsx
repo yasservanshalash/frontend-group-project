@@ -15,7 +15,7 @@ import "./Footer.css";
 const Footer = () => {
   // RENDER
   return (
-    <AppBar position="static" className="footer-appbar">
+    <AppBar position="static" className="footer-appbar" color="inherit">
       <Container maxWidth="xl" className="footer-container">
         <Toolbar disableGutters>
           <Box sx={{ my: 4, mx: 4 }} className="footer-box">
@@ -26,7 +26,7 @@ const Footer = () => {
                   gutterBottom
                   variant="h6"
                   component="div"
-                  color="#767676 !important;"
+                  color="inherit !important;"
                   sx={{ fontWeight: "bold" }}
                 >
                   Buy
@@ -35,7 +35,7 @@ const Footer = () => {
             </Grid>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -43,7 +43,7 @@ const Footer = () => {
             </Typography>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -51,7 +51,7 @@ const Footer = () => {
             </Typography>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -59,7 +59,7 @@ const Footer = () => {
             </Typography>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -67,7 +67,7 @@ const Footer = () => {
             </Typography>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -83,7 +83,7 @@ const Footer = () => {
                   gutterBottom
                   variant="h6"
                   component="div"
-                  color="#767676 !important;"
+                  color="inherit !important;"
                   sx={{ fontWeight: "bold" }}
                 >
                   Sell
@@ -92,7 +92,7 @@ const Footer = () => {
             </Grid>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -100,7 +100,7 @@ const Footer = () => {
             </Typography>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -108,7 +108,7 @@ const Footer = () => {
             </Typography>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -117,7 +117,7 @@ const Footer = () => {
 
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -125,7 +125,7 @@ const Footer = () => {
             </Typography>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -141,7 +141,7 @@ const Footer = () => {
                   gutterBottom
                   variant="h6"
                   component="div"
-                  color="#767676 !important;"
+                  color="inherit !important;"
                   sx={{ fontWeight: "bold" }}
                 >
                   Stay Conncted
@@ -150,7 +150,7 @@ const Footer = () => {
             </Grid>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -158,7 +158,7 @@ const Footer = () => {
             </Typography>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -166,7 +166,7 @@ const Footer = () => {
             </Typography>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -175,7 +175,7 @@ const Footer = () => {
 
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -191,7 +191,7 @@ const Footer = () => {
                   gutterBottom
                   variant="h6"
                   component="div"
-                  color="#767676 !important;"
+                  color="inherit !important;"
                   sx={{ fontWeight: "bold" }}
                 >
                   About eShop
@@ -200,7 +200,7 @@ const Footer = () => {
             </Grid>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -208,7 +208,7 @@ const Footer = () => {
             </Typography>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -216,7 +216,7 @@ const Footer = () => {
             </Typography>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -224,7 +224,7 @@ const Footer = () => {
             </Typography>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -232,7 +232,7 @@ const Footer = () => {
             </Typography>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -240,7 +240,7 @@ const Footer = () => {
             </Typography>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -256,7 +256,7 @@ const Footer = () => {
                   gutterBottom
                   variant="h6"
                   component="div"
-                  color="#767676 !important;"
+                  color="inherit !important;"
                   sx={{ fontWeight: "bold" }}
                 >
                   Help & Contact
@@ -265,7 +265,7 @@ const Footer = () => {
             </Grid>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -273,13 +273,13 @@ const Footer = () => {
             </Typography>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             ></Typography>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -287,7 +287,7 @@ const Footer = () => {
             </Typography>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -295,7 +295,7 @@ const Footer = () => {
             </Typography>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -303,7 +303,7 @@ const Footer = () => {
             </Typography>
             <Typography
               align="left"
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
@@ -313,7 +313,7 @@ const Footer = () => {
 
           <Box sx={{ my: 6, mx: 6 }} className="footer-box">
             <Typography
-              color="#767676 !important;"
+              color="inherit !important;"
               variant="body2"
               sx={{ m: 1 }}
             >
