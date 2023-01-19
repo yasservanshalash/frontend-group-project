@@ -75,7 +75,8 @@ const Slider = () => {
         backgroundColor: "whitesmoke",
         justifyContent: "center",
         alignItems: "center",
-        m: 20,
+        my: 2,
+        mx: 20,
       }}
     >
       <Paper
