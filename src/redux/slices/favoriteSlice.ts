@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 import { ProductType } from "./../../types/types";
 // GET ITEM
-const items =
+const items: ProductType[] =
   localStorage.getItem("favorite") !== null
     ? JSON.parse(localStorage.getItem("favorite")!)
     : [];
