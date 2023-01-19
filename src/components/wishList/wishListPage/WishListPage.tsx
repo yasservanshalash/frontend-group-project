@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/store";
 import { ProductType } from "../../../types/types";
 import WishListItem from "../wishListItem/WishListItem";
+import "./WishListPage.css";
 
 const WishListPage = () => {
   // STATE
@@ -16,12 +17,17 @@ const WishListPage = () => {
 
   // RENDER
   return (
-    <div className="container">
-      {items.length > 0 ? items.map((item: ProductType) => (
-        <WishListItem item={item} key={item.id} />
-      )) : wishList.map((item: ProductType) => (
-        <WishListItem item={item} key={item.id} />
-      ))}
+    <div className="fav-wrap">
+      <h1 className="fav-header">Favorite List</h1>
+      <div className="container">
+        {items.length > 0
+          ? items.map((item: ProductType) => (
+              <WishListItem item={item} key={item.id} />
+            ))
+          : wishList.map((item: ProductType) => (
+              <WishListItem item={item} key={item.id} />
+            ))}
+      </div>
     </div>
   );
 };

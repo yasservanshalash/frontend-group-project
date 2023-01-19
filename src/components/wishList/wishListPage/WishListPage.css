@@ -1,7 +1,8 @@
-.container {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-  background-color: aqua;
+.fav-header {
+  margin-left: 0 auto;
+
+  text-align: center;
+}
+.fav-wrap {
+  margin: 100px 0px;
 }
