@@ -17,7 +17,7 @@ import BrandImg07 from "../../assets/brandproducts/img77.jpg";
 
 const PopularBrands = () => {
   return (
-    <Box className="popularbrands" textAlign="center" sx={{ ml: 20, mt: 10 }}>
+    <Box className="popularbrands" textAlign="center" sx={{ ml: 20, mt: 10, mb: 10 }}>
       <Typography
         align="left"
         color="black"
