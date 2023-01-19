@@ -19,10 +19,10 @@ const WishListItem = ({ item }: Prop) => {
   // RENDER
   return (
     <div>
-      <h3>Name: {item.title.slice(0, 20)}</h3>
+      <h3>{item.title.slice(0, 20)}</h3>
 
       <p className="price">$:{item.price}</p>
-      <p className="category">Category:{item.category}</p>
+      <p className="category">{item.category}</p>
       <div className="image">
         <img src={item.image} alt="favProduct" height="80px" width="70px" />
       </div>
