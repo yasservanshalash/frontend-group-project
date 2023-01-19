@@ -5,6 +5,10 @@ import { ProductType } from "../../../types/types";
 import { cartSliceActions } from "../../../redux/slices/cartSlice";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
+import Button from "@mui/material/Button";
+
+import SendIcon from "@mui/icons-material/Send";
+import Stack from "@mui/material/Stack";
 // TYPE
 type Prop = {
   item: ProductType;
@@ -48,7 +52,17 @@ const CartItem = ({ item }: Prop) => {
           <AddCircleIcon onClick={incrementQuantityHandler} />
         </div>
         <div>
-          <button onClick={removeFromCartHandler}>Remove</button>
+          <Stack direction="row" spacing={2}>
+            <Button
+              variant="outlined"
+              startIcon={<DeleteIcon />}
+              onClick={removeFromCartHandler}
+              color="error"
+            >
+              Delete
+            </Button>
+          </Stack>
+          {/*   <button onClick={removeFromCartHandler}>Remove</button> */}
         </div>
       </div>
     </div>
