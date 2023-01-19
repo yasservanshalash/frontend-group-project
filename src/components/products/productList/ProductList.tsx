@@ -1,5 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
+import { Typography } from "@mui/material";
 
 import "./ProductList.css";
 import { AppDispatch, RootState } from "../../../redux/store";
@@ -49,9 +52,7 @@ const ProductList = ({ userInput }: { userInput: string }) => {
         <button onClick={sortDescendingHandler}>Descending</button>
         <button onClick={sortPriceAscendingHandler}>PriceAscending</button>
         <button onClick={sortPriceDescendingHandler}>PriceDescending</button>
-        <button onClick={() => sortByCategoryHandler("all")}>
-          All
-        </button>
+        <button onClick={() => sortByCategoryHandler("all")}>All</button>
         <button onClick={() => sortByCategoryHandler("electronics")}>
           SortByCategory
         </button>
@@ -67,7 +68,9 @@ const ProductList = ({ userInput }: { userInput: string }) => {
       </div>
       <div className="productList">
         {productList.length === 0 ? (
-          <h1>Loading...</h1>
+          <Box className="loader">
+            <CircularProgress />
+          </Box>
         ) : (
           filteredList
             .filter((product: ProductType) =>
