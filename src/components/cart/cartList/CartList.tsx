@@ -14,9 +14,9 @@ const CartList = () => {
     0
   );
   // GET ITEM
-  const items: ProductType[] =
-    localStorage.getItem("favorite") !== null
-      ? JSON.parse(localStorage.getItem("favorite")!)
+  const items =
+    localStorage.getItem("cartlist") !== null
+      ? JSON.parse(localStorage.getItem("cartlist")!)
       : [];
 
   // RENDER
@@ -24,11 +24,12 @@ const CartList = () => {
     <div className="cart-wrap">
       <h1 className="header">Your Cart</h1>
       {items.length > 0
-        ? items.map((item) => <CartItem key={item.id} item={item} />)
-        : cartList.map((item) => <CartItem key={item.id} item={item} />)}
-      <div className="total-button">
-        <h1>Total: ${Math.round(totalprice)}</h1>
-      </div>
+        ? items.map((item: ProductType) => (
+            <CartItem item={item} key={item.id} />
+          ))
+        : cartList.map((item: ProductType) => (
+            <CartItem item={item} key={item.id} />
+          ))}
     </div>
   );
 };

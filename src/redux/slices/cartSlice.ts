@@ -29,7 +29,7 @@ const cartSlice = createSlice({
         state.cartList[index].quantity += 1;
       } else {
         state.cartList.push(action.payload);
-        // SETITEM
+        // SETITEM;
         localStorage.setItem(
           "cartlist",
           JSON.stringify(state.cartList.map((item: ProductType) => item))

@@ -1,4 +1,4 @@
-import { ProductType } from "./../../types/types";
+import { ProductType } from "../../types/types";
 import { createSlice } from "@reduxjs/toolkit";
 // TYPE
 type IntialState = {
@@ -41,14 +41,13 @@ const productSlice = createSlice({
       );
     },
     sortByCategory: (state, action) => {
-      if(action.payload === 'all') {
-        state.filteredProduct = state.products
+      if (action.payload === "all") {
+        state.filteredProduct = state.products;
       } else {
         state.filteredProduct = state.products.filter(
           (item) => item.category === action.payload
         );
       }
-
     },
   },
 });

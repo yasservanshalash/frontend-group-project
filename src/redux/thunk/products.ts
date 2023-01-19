@@ -1,4 +1,4 @@
-import { productSliceActions } from "./../slices/producttSlice";
+import { productSliceActions } from "../slices/productSlice";
 import { ProductType } from "../../types/types";
 import { AppDispatch } from "../store";
 

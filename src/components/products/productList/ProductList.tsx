@@ -8,7 +8,7 @@ import "./ProductList.css";
 import { AppDispatch, RootState } from "../../../redux/store";
 import ProductItem from "../productItem/ProductItem";
 import { ProductType } from "../../../types/types";
-import { productSliceActions } from "../../../redux/slices/producttSlice";
+import { productSliceActions } from "../../../redux/slices/productSlice";
 import { getProductData } from "../../../redux/thunk/products";
 
 const ProductList = ({ userInput }: { userInput: string }) => {
