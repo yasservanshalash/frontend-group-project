@@ -1,0 +1,24 @@
+/* .header {
+  margin-left: 45%;
+}
+.total-button {
+  margin-left: 45%;
+}
+.total-button {
+  margin-left: 45%;
+}
+ */
+/* .header {
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+} */
+.total-button,
+.header {
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+}
+.cart-wrap {
+  margin: 100px 0px;
+}
