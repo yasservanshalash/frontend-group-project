@@ -1,39 +1,47 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { AppDispatch, RootState } from "../../redux/store";
 import getProductDetailData from "../../redux/thunk/productDetail";
-import { productDetailSliceActions } from "../../redux/slices/productDetailSlice";
 import { ProductType } from "../../types/types";
-import { getProductData } from "../../redux/thunk/products";
-import { productSliceActions } from "../../redux/slices/producttSlice";
+// URL
+const url = "https://fakestoreapi.com/products/";
 
-const url = "https://fakestoreapi.com/products/"
 const ProductDetails = () => {
-  const { id } = useParams();
-  const product: ProductType = useSelector((state: RootState) => state.productDetails.productDetails);
-  console.log(product, "product");
+  // STATE
+  const product: ProductType = useSelector(
+    (state: RootState) => state.productDetails.productDetails
+  );
+  // DISPATCH
   const dispatch = useDispatch<AppDispatch>();
-
-  useEffect(() => { 
-    dispatch(getProductDetailData(url + id))
+  // USE PARAMS
+  const { id } = useParams();
+  // SIDE EFFECT
+  useEffect(() => {
+    dispatch(getProductDetailData(url + id));
   }, [dispatch]);
-
+  // RENDER
   return (
     <div>
-      {
-        !product ? <h1>Loading</h1> : <div className='itemDetail'>
-        <img src={product.image} alt={product.title} className="productImgDetail"/>
-        <div className='productInfo'>
-        <h1>{product.title}</h1>
-        <p>{product.category}</p>
-        <p>{product.description}</p>
-        <p>{product.price === 1 ? "loading" : product.price}</p>
+      {!product ? (
+        <h1>Loading</h1>
+      ) : (
+        <div className="itemDetail">
+          <img
+            src={product.image}
+            alt={product.title}
+            className="productImgDetail"
+          />
+          <div className="productInfo">
+            <h1>{product.title}</h1>
+            <p>{product.category}</p>
+            <p>{product.description}</p>
+            <p>{product.price === 1 ? "loading" : product.price}</p>
+          </div>
         </div>
+      )}
     </div>
-      }    
-      </div>
   );
 };
 

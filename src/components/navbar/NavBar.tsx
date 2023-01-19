@@ -17,6 +17,9 @@ import ProductIcon from "@mui/icons-material/Inventory";
 import WishListIcon from "@mui/icons-material/Favorite";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+import { RootState } from "../../redux/store";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -59,6 +62,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const NavBar = () => {
+  const wishList = useSelector(
+    (state: RootState) => state.favoriteList.favorite
+  );
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null);
@@ -164,7 +170,7 @@ const NavBar = () => {
       >
         <MenuItem onClick={handleMobileMenuClose}>
           <IconButton size="large" aria-label="Wish List" color="inherit">
-            <Badge badgeContent={4} color="error">
+            <Badge badgeContent={wishList.length} color="error">
               <WishListIcon />
             </Badge>
           </IconButton>

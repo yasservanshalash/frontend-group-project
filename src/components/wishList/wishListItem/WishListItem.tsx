@@ -1,18 +1,21 @@
-import React from "react";
 import { useDispatch } from "react-redux";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 import { favoriteSliceActions } from "../../../redux/slices/favoriteSlice";
 import { ProductType } from "../../../types/types";
 
+// TYPE
 type Prop = {
   item: ProductType;
 };
 const WishListItem = ({ item }: Prop) => {
+  // DISPATCH
   const dispatch = useDispatch();
+  // REMOVE
   const removeWishListItem = () => {
     dispatch(favoriteSliceActions.removeFavorite(item));
   };
+  // RENDER
   return (
     <div>
       <p>ID: {item.id}</p>

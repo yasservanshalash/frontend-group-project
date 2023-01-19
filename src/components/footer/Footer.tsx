@@ -1,4 +1,3 @@
-import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -14,6 +13,7 @@ import CallIcon from "@mui/icons-material/Call";
 import "./Footer.css";
 
 const Footer = () => {
+  // RENDER
   return (
     <AppBar position="static" className="footer-appbar">
       <Container maxWidth="xl" className="footer-container">

@@ -1,12 +1,20 @@
 import { AppBar, Toolbar } from "@mui/material";
 import { Box } from "@mui/system";
+import SearchBar from "../search/SearchBar";
 import { Link } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
+import IconButton from "@mui/material/IconButton";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import HomeIcon from "@mui/icons-material/Home";
+import InventoryIcon from "@mui/icons-material/Inventory";
+import Badge from "@mui/material/Badge";
 
-import SearchBar from "../search/SearchBar";
 import "./NavBar2.css";
-
+import { RootState } from "../../redux/store";
+import { useSelector } from "react-redux";
+// MUI SWITCH
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
   height: 34,
@@ -63,6 +71,12 @@ const NavBar2 = ({
   clicked: boolean;
   setClicked: Function;
 }) => {
+  // STATE
+  const wishList = useSelector(
+    (state: RootState) => state.favoriteList.favorite
+  );
+  const cartList = useSelector((state: RootState) => state.cartList.cartList);
+  // RENDER
   return (
     <div>
       <AppBar sx={{ position: "static" }}>
@@ -84,18 +98,23 @@ const NavBar2 = ({
               gap: "30px",
             }}
           >
-            <Link to="/">
-              <p>Home</p>
-            </Link>
-            <Link to="/products">
-              <p>Products</p>
-            </Link>
-            <Link to="/wishlist">
-              <p>WishList</p>
-            </Link>
-            <Link to="/cartlist">
-              <p>Cart</p>
-            </Link>
+            <IconButton component={Link} to="/">
+              <HomeIcon />
+            </IconButton>
+
+            <IconButton component={Link} to="/products">
+              <InventoryIcon />
+            </IconButton>
+            <IconButton component={Link} to="/wishlist">
+              <Badge badgeContent={wishList.length} color="error">
+                <FavoriteIcon />
+              </Badge>
+            </IconButton>
+            <IconButton component={Link} to="/cartlist">
+              <Badge badgeContent={cartList.length} color="error">
+                <ShoppingCartIcon />
+              </Badge>
+            </IconButton>
             <MaterialUISwitch
               sx={{ m: 1 }}
               defaultChecked

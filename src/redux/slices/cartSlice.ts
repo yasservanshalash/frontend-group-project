@@ -1,19 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import { ProductType } from "./../../types/types";
-
-type IntialState = {
+// TYPE
+type InitialState = {
   cartList: ProductType[];
 };
-
-const initialState: IntialState = {
+// INITIAL STATE
+const initialState: InitialState = {
   cartList: [],
 };
-
+// SLICE
 const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
+    // CASES
     addTocart: (state, action) => {
       const index = state.cartList.findIndex(
         (cartItem) => cartItem.title === action.payload.title
@@ -50,7 +51,8 @@ const cartSlice = createSlice({
     },
   },
 });
-
+// ACTIONS
 export const cartSliceActions = cartSlice.actions;
+// REDUCER
 const cartSliceReducer = cartSlice.reducer;
 export default cartSliceReducer;

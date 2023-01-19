@@ -1,5 +1,5 @@
+/* PRODUCTLIST */
 .productList {
-    display: grid;
-    grid-template-columns: 1fr;
-
+  display: grid;
+  grid-template-columns: 1fr;
 }

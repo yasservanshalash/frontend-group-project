@@ -1,40 +1,39 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-import DirectionsIcon from "@mui/icons-material/Directions";
-import { keyboard } from "@testing-library/user-event/dist/keyboard";
 
+// TYPE
 type PropType = {
-    setUserInput: Function;
-}
+  setUserInput: Function;
+};
 
-const SearchBar = ({setUserInput}: PropType) => {
+const SearchBar = ({ setUserInput }: PropType) => {
+  // STATE
   const [searchTerm, setSearchTerm] = useState<string>("");
-
+  // NAVIGATE
   const navigate = useNavigate();
+  // HANDLERS
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
   };
 
   const searchHandler = (e: React.MouseEvent<HTMLElement>) => {
-    setUserInput(searchTerm)
-    navigate("/products")
+    setUserInput(searchTerm);
+    navigate("/products");
   };
-
+  // ONENTER KEY HANDLER
   const onEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if(e.key === "Enter") {
-        e.preventDefault();
-        setUserInput(searchTerm)
-        navigate("/products")
+    if (e.key === "Enter") {
+      e.preventDefault();
+      setUserInput(searchTerm);
+      navigate("/products");
     }
-  }
+  };
+  // RENDER
   return (
     <Paper
       component="form"
