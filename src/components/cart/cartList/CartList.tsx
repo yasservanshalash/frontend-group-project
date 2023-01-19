@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 
 import { RootState } from "../../../redux/store";
 import CartItem from "../cartItem/CartItem";
+import "./CartList.css";
 
 const CartList = () => {
   // STATE
@@ -13,13 +14,14 @@ const CartList = () => {
   );
   // RENDER
   return (
-    <div>
-      <h1>Cart list</h1>
+    <div className="cart-wrap">
+      <h1 className="header">Your Cart</h1>
       {cartList.map((item) => (
         <CartItem key={item.id} item={item} />
       ))}
-      <button>Total Cart Price:</button>
-      <span>{totalprice}</span>
+      <div className="total-button">
+        <h1>Total: ${Math.round(totalprice)}</h1>
+      </div>
     </div>
   );
 };
