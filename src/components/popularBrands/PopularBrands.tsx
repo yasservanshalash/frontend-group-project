@@ -30,7 +30,7 @@ const PopularBrands = () => {
         <Link
           key="products"
           component={NavLink}
-          to="#"
+          to="/products"
           color="black"
           underline="none"
           variant="button"
