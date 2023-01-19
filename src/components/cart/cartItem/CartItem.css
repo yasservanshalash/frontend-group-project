@@ -1,0 +1,28 @@
+.cart-container {
+  display: flex;
+  /*  width: 80%; */
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+  width: 50%;
+}
+.cart-details {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+}
+.cart-button {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.button-quantity button {
+  height: 20px;
+  border-radius: 50%;
+}
+.button-quantity {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}

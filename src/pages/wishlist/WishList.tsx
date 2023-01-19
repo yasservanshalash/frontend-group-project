@@ -1,7 +1,7 @@
-import React from "react";
+import WishListPage from "../../components/wishList/wishListPage/WishListPage";
 
 const WishList = () => {
-  return <div>WishList</div>;
+  // RENDER
+  return <WishListPage />;
 };
-
 export default WishList;

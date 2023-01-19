@@ -1,0 +1,20 @@
+.itemDetailPage{
+    margin: 100px auto;
+    width: 70%;
+}
+.itemDetails {
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+}
+
+.productImgDetail {
+    width: 100px    
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}

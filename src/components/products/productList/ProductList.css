@@ -1,0 +1,20 @@
+/* PRODUCTLIST */
+.productList {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+/* LOADER */
+.loader {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}

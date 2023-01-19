@@ -2,48 +2,83 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import { ProductType } from "./../../types/types";
 
-// type IntialState = {
-//   cartList: ProductType[];
-// };
-
-// const initialState: IntialState = {
-//   cartList: [],
-// };
-
-// const cartProductSlice = createSlice({
-//   name: "cart",
-//   initialState,
-//   reducers: {
-//     addTocart: (state, action) => {
-//       const index = state.cartList.findIndex(
-//         (cartItem) => cartItem.title === action.payload.title
-//       );
-//       if (index !== -1) {
-//         state.cartList[index].quantity += 1;
-//       }
-//       state.cartList.push(action.payload);
-//     },
-//     increaseItemQuantity: (state, action) => {
-//       const item = state.cartList.find((item) => item.id === action.payload.id);
-//       item?.quantity
-//     },
-//     decreaseItemQuantity: (state, action) => {
-//       const item = state.cartList.find((item) => item.id === action.payload.id);
-//       if (item.quantity === 1) {
-//         item?.quantity === 1;
-//       } else {
-//         item.quantity -= 1;
-//       }
-//     },
-//     removeCartItem: (state, action) => {
-//       const removeItem = state.cartList.filter(
-//         (item) => item.id !== action.payload
-//       );
-//       state.cartList = removeItem;
-//     },
-//   },
-// });
-
-// export const cartProductSliceActions = cartProductSlice.actions;
-// const cartProductReducer = cartProductSlice.reducer;
-// export default cartProductReducer;
+// TYPE
+type InitialState = {
+  cartList: ProductType[];
+};
+// GET ITEM
+const items: ProductType[] =
+  localStorage.getItem("cartlist") !== null
+    ? JSON.parse(localStorage.getItem("cartlist")!)
+    : [];
+// INITIAL STATE
+const initialState: InitialState = {
+  cartList: items,
+};
+// SLICE
+const cartSlice = createSlice({
+  name: "cart",
+  initialState,
+  reducers: {
+    // ADD TO CART
+    addTocart: (state, action) => {
+      const index = state.cartList.findIndex(
+        (cartItem) => cartItem.title === action.payload.title
+      );
+      if (index !== -1) {
+        state.cartList[index].quantity += 1;
+      } else {
+        state.cartList.push(action.payload);
+        // SETITEM
+        localStorage.setItem(
+          "cartlist",
+          JSON.stringify(state.cartList.map((item: ProductType) => item))
+        );
+      }
+    },
+    // INCREMENT
+    incrementQuantity: (state, action) => {
+      const index = state.cartList.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      if (index !== -1) {
+        state.cartList[index].quantity += 1;
+      }
+      localStorage.setItem(
+        "cartlist",
+        JSON.stringify(state.cartList.map((item: ProductType) => item))
+      );
+    },
+    // DECREMENT
+    decrementQuantity: (state, action) => {
+      const index = state.cartList.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      if (index !== -1) {
+        if (state.cartList[index].quantity > 1) {
+          state.cartList[index].quantity -= 1;
+        }
+      }
+      localStorage.setItem(
+        "cartlist",
+        JSON.stringify(state.cartList.map((item: ProductType) => item))
+      );
+    },
+    // REMOVE
+    removeCartItem: (state, action) => {
+      const removeItem = state.cartList.filter(
+        (item) => item.id !== action.payload.id
+      );
+      state.cartList = removeItem;
+      localStorage.setItem(
+        "cartlist",
+        JSON.stringify(state.cartList.map((item: ProductType) => item))
+      );
+    },
+  },
+});
+// ACTIONS
+export const cartSliceActions = cartSlice.actions;
+// REDUCER
+const cartSliceReducer = cartSlice.reducer;
+export default cartSliceReducer;
