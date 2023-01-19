@@ -79,7 +79,7 @@ const NavBar2 = ({
   // RENDER
   return (
     <div>
-      <AppBar sx={{ position: "static" }}>
+      <AppBar sx={{ position: "static" }} color="inherit">
         <Toolbar
           sx={{
             display: "flex",
@@ -98,19 +98,19 @@ const NavBar2 = ({
               gap: "30px",
             }}
           >
-            <IconButton component={Link} to="/">
+            <IconButton component={Link} to="/" color="inherit">
               <HomeIcon />
             </IconButton>
 
-            <IconButton component={Link} to="/products">
+            <IconButton component={Link} to="/products" color="inherit">
               <InventoryIcon />
             </IconButton>
-            <IconButton component={Link} to="/wishlist">
+            <IconButton component={Link} to="/wishlist" color="inherit">
               <Badge badgeContent={wishList.length} color="error">
                 <FavoriteIcon />
               </Badge>
             </IconButton>
-            <IconButton component={Link} to="/cartlist">
+            <IconButton component={Link} to="/cartlist" color="inherit">
               <Badge badgeContent={cartList.length} color="error">
                 <ShoppingCartIcon />
               </Badge>
