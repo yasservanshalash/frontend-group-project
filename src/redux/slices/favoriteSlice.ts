@@ -46,11 +46,12 @@ const favoriteSlice = createSlice({
         const favItem = state.favorite.filter(
           (item: ProductType) => item.title !== action.payload.title
         );
+        state.favorite = favItem;
+
         localStorage.setItem(
           "favorite",
           JSON.stringify(state.favorite.map((item: ProductType) => item))
         );
-        state.favorite = favItem;
       }
     },
   },
