@@ -20,7 +20,7 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    // CASES
+    // ADD TO CART
     addTocart: (state, action) => {
       const index = state.cartList.findIndex(
         (cartItem) => cartItem.title === action.payload.title
@@ -36,6 +36,7 @@ const cartSlice = createSlice({
         );
       }
     },
+    // INCREMENT
     incrementQuantity: (state, action) => {
       const index = state.cartList.findIndex(
         (item) => item.id === action.payload.id
@@ -43,7 +44,12 @@ const cartSlice = createSlice({
       if (index !== -1) {
         state.cartList[index].quantity += 1;
       }
+      localStorage.setItem(
+        "cartlist",
+        JSON.stringify(state.cartList.map((item: ProductType) => item))
+      );
     },
+    // DECREMENT
     decrementQuantity: (state, action) => {
       const index = state.cartList.findIndex(
         (item) => item.id === action.payload.id
@@ -53,7 +59,12 @@ const cartSlice = createSlice({
           state.cartList[index].quantity -= 1;
         }
       }
+      localStorage.setItem(
+        "cartlist",
+        JSON.stringify(state.cartList.map((item: ProductType) => item))
+      );
     },
+    // REMOVE
     removeCartItem: (state, action) => {
       const removeItem = state.cartList.filter(
         (item) => item.id !== action.payload.id

@@ -88,7 +88,7 @@ const NavBar2 = ({
           }}
         >
           <Box>
-            <h3>eShop</h3>
+            <Link to="/"><h3>eShop</h3></Link>
           </Box>
           <SearchBar setUserInput={setUserInput} />
           <Box

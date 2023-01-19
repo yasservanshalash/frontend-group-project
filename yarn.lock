@@ -1189,9 +1189,9 @@
   integrity sha512-c8J4roPBILnelAsdLr4XOAR/GsTm0GJi4XpcfvoWk3U6KiTCqiFYc63KhRMQQX35jYMp4Ao8Ij9+IZRgMfJp1g==
 
 "@csstools/selector-specificity@^2.0.0", "@csstools/selector-specificity@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@csstools/selector-specificity/-/selector-specificity-2.0.2.tgz#1bfafe4b7ed0f3e4105837e056e0a89b108ebe36"
-  integrity sha512-IkpVW/ehM1hWKln4fCA3NzJU8KwD+kIOvPZA4cqxoJHtE21CCzjyp+Kxbu0i5I4tBNOlXPL9mjwnWlL0VEG4Fg==
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@csstools/selector-specificity/-/selector-specificity-2.1.0.tgz#923ebf8ba47e854863ae72510d9cbf7b44d525ea"
+  integrity sha512-zJ6hb3FDgBbO8d2e83vg6zq7tNvDqSq9RwdwfzJ8tdm9JHNvANq2fqwyRn6mlpUb7CwTs5ILdUrGwi9Gk4vY5w==
 
 "@emotion/babel-plugin@^11.10.5":
   version "11.10.5"
@@ -3680,9 +3680,9 @@ css.escape@^1.5.1:
   integrity sha512-YUifsXXuknHlUsmlgyY0PKzgPOr7/FjCePfHNt0jxm83wHZi44VDMQ7/fGNkjY3/jV1MC+1CmZbaHzugyeRtpg==
 
 cssdb@^7.1.0:
-  version "7.2.1"
-  resolved "https://registry.yarnpkg.com/cssdb/-/cssdb-7.2.1.tgz#f6f59e2c4249bcb5ca5606fc4ab6f9a808d55486"
-  integrity sha512-btohrCpVaLqOoMt90aumHe6HU4c06duiYA8ymwtpGfwuZAhWKDBve/c2k+E85Jeq5iojPkeonqiKV+aLeY8QlA==
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/cssdb/-/cssdb-7.3.0.tgz#b1d4580a21da34f792047ad0556fbb4b53617ead"
+  integrity sha512-9YymIstaCsXo9qQSxrXzOv27bXJmb/q/LkbORepKzKjHE0TS6Pn3ewoazoBDGvODUvPO0pMG2O4YzVGmVGYK5A==
 
 cssesc@^3.0.0:
   version "3.0.0"
@@ -7676,9 +7676,9 @@ psl@^1.1.33:
   integrity sha512-E/ZsdU4HLs/68gYzgGTkMicWTLPdAftJLfJFlLUAAKZGkStNU72sZjT66SnMDVOfOWY/YAoiD7Jxa9iHvngcag==
 
 punycode@^2.1.0, punycode@^2.1.1:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.2.2.tgz#082313fe5efe0aa2d931d7aed15b99315c24e548"
-  integrity sha512-vKAcKbHEGA3cKbkNWwsA9MjHgIg4/X/xO/PnVQ/Pxt5eNC8/F726fGNlUlwwPej7NkmTg9OBWP4ovYvtdPtmXw==
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.3.0.tgz#f67fa67c94da8f4d0cfff981aee4118064199b8f"
+  integrity sha512-rRV+zQD8tVFys26lAGR9WUuS4iUAngJScM+ZRSKtvl5tKeZ2t5bvdNFdNHBW9FWR4guGHlgmsZ1G7BSm2wTbuA==
 
 q@^1.1.2:
   version "1.5.1"
