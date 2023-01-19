@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import DeleteIcon from "@mui/icons-material/Delete";
+import "./WishListItem.css";
 
 import { favoriteSliceActions } from "../../../redux/slices/favoriteSlice";
 import { ProductType } from "../../../types/types";
@@ -18,12 +19,18 @@ const WishListItem = ({ item }: Prop) => {
   // RENDER
   return (
     <div>
-      <p>ID: {item.id}</p>
-      <p>Name: {item.title}</p>
-      <p>Category:{item.category}</p>
-      <p>Price:{item.price}</p>
-      <img src={item.image} alt="favProduct" height="40px" width="50px" />
-      <DeleteIcon onClick={removeWishListItem}>Remove</DeleteIcon>
+      <h3>Name: {item.title.slice(0, 20)}</h3>
+
+      <p className="price">$:{item.price}</p>
+      <p className="category">Category:{item.category}</p>
+      <div className="image">
+        <img src={item.image} alt="favProduct" height="80px" width="70px" />
+      </div>
+      <div>
+        <button onClick={removeWishListItem} className="remove">
+          Remove
+        </button>
+      </div>
     </div>
   );
 };
