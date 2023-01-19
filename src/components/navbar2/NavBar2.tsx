@@ -122,6 +122,13 @@ const NavBar2 = ({
             />
           </Box>
         </Toolbar>
+        <Toolbar sx={{display: "flex", justifyContent: "space-between", mx: 20}}>
+        <p>All Categories</p>
+        <p>Electronics</p>
+        <p>Jewelery</p>
+        <p>Men's</p>
+        <p>Women's</p>
+          </Toolbar>
       </AppBar>
     </div>
   );
