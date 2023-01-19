@@ -6,9 +6,9 @@ import WishListItem from "../wishListItem/WishListItem";
 
 const WishListPage = () => {
   // STATE
-  /* const wishList = useSelector(
+  const wishList = useSelector(
     (state: RootState) => state.favoriteList.favorite
-  ); */
+  );
   const items =
     localStorage.getItem("favorite") !== null
       ? JSON.parse(localStorage.getItem("favorite")!)
@@ -17,7 +17,9 @@ const WishListPage = () => {
   // RENDER
   return (
     <div className="container">
-      {items.map((item: ProductType) => (
+      {items.length > 0 ? items.map((item: ProductType) => (
+        <WishListItem item={item} key={item.id} />
+      )) : wishList.map((item: ProductType) => (
         <WishListItem item={item} key={item.id} />
       ))}
     </div>
