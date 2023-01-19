@@ -7,7 +7,6 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 import Button from "@mui/material/Button";
 
-import SendIcon from "@mui/icons-material/Send";
 import Stack from "@mui/material/Stack";
 // TYPE
 type Prop = {
@@ -62,7 +61,6 @@ const CartItem = ({ item }: Prop) => {
               Delete
             </Button>
           </Stack>
-          {/*   <button onClick={removeFromCartHandler}>Remove</button> */}
         </div>
       </div>
     </div>
