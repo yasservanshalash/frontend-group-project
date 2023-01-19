@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 import { ProductType } from "./../../types/types";
-// GETITEM FROM LOCAL STORAGE
+// GET ITEM
 const items =
   localStorage.getItem("favorite") !== null
     ? JSON.parse(localStorage.getItem("favorite")!)
@@ -29,7 +29,7 @@ const favoriteSlice = createSlice({
         return;
       } else {
         state.favorite.push(action.payload);
-        // SETITEM TO LOCAL STORAGE
+        // SETITEM
         localStorage.setItem(
           "favorite",
           JSON.stringify(state.favorite.map((item: ProductType) => item))

@@ -1,13 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import { ProductType } from "./../../types/types";
+
 // TYPE
 type InitialState = {
   cartList: ProductType[];
 };
+// GET ITEM
+const items: ProductType[] =
+  localStorage.getItem("cartlist") !== null
+    ? JSON.parse(localStorage.getItem("cartlist")!)
+    : [];
 // INITIAL STATE
 const initialState: InitialState = {
-  cartList: [],
+  cartList: items,
 };
 // SLICE
 const cartSlice = createSlice({
@@ -23,6 +29,11 @@ const cartSlice = createSlice({
         state.cartList[index].quantity += 1;
       } else {
         state.cartList.push(action.payload);
+        // SETITEM
+        localStorage.setItem(
+          "cartlist",
+          JSON.stringify(state.cartList.map((item: ProductType) => item))
+        );
       }
     },
     incrementQuantity: (state, action) => {
@@ -48,6 +59,10 @@ const cartSlice = createSlice({
         (item) => item.id !== action.payload.id
       );
       state.cartList = removeItem;
+      localStorage.setItem(
+        "cartlist",
+        JSON.stringify(state.cartList.map((item: ProductType) => item))
+      );
     },
   },
 });
