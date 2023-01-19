@@ -49,10 +49,19 @@ const ProductList = ({ userInput }: { userInput: string }) => {
         <button onClick={sortDescendingHandler}>Descending</button>
         <button onClick={sortPriceAscendingHandler}>PriceAscending</button>
         <button onClick={sortPriceDescendingHandler}>PriceDescending</button>
+        <button onClick={() => sortByCategoryHandler("all")}>
+          All
+        </button>
+        <button onClick={() => sortByCategoryHandler("electronics")}>
+          SortByCategory
+        </button>
         <button onClick={() => sortByCategoryHandler("jewelery")}>
-          Sort Jewelery
+          SortByCategory
         </button>
         <button onClick={() => sortByCategoryHandler("men's clothing")}>
+          SortByCategory
+        </button>
+        <button onClick={() => sortByCategoryHandler("women's clothing")}>
           SortByCategory
         </button>
       </div>

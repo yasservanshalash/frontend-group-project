@@ -21,29 +21,34 @@ const productSlice = createSlice({
       state.filteredProduct = action.payload;
     },
     sortAscending: (state) => {
-      state.products.sort((a, b) =>
+      state.filteredProduct.sort((a, b) =>
         a.title > b.title ? 1 : b.title > a.title ? -1 : 0
       );
     },
     sortDescending: (state) => {
-      state.products.sort((a, b) =>
+      state.filteredProduct.sort((a, b) =>
         b.title > a.title ? 1 : a.title > b.title ? -1 : 0
       );
     },
     sortByPriceAscending: (state) => {
-      state.products = state.products.sort((r1, r2) =>
+      state.filteredProduct = state.products.sort((r1, r2) =>
         r1.price > r2.price ? 1 : r1.price < r2.price ? -1 : 0
       );
     },
     sortByPriceDescending: (state) => {
-      state.products = state.products.sort((r1, r2) =>
+      state.filteredProduct = state.products.sort((r1, r2) =>
         r1.price < r2.price ? 1 : r1.price > r2.price ? -1 : 0
       );
     },
     sortByCategory: (state, action) => {
-      state.filteredProduct = state.products.filter(
-        (item) => item.category === action.payload
-      );
+      if(action.payload === 'all') {
+        state.filteredProduct = state.products
+      } else {
+        state.filteredProduct = state.products.filter(
+          (item) => item.category === action.payload
+        );
+      }
+
     },
   },
 });
