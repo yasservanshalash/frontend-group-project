@@ -11,6 +11,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import Badge from "@mui/material/Badge";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import "./NavBar2.css";
 import { RootState } from "../../redux/store";
@@ -79,11 +80,16 @@ const NavBar2 = ({
   );
   const cartList = useSelector((state: RootState) => state.cartList.cartList);
   // DISPATCH
+
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   // SORTING HANDLER
   const sortByCategoryHandler = (category: string) => {
     dispatch(productSliceActions.sortByCategory(category));
+    navigate("/products")
+
   };
+
   // RENDER
   return (
     <div>
@@ -135,11 +141,11 @@ const NavBar2 = ({
         <Toolbar
           sx={{ display: "flex", justifyContent: "space-between", mx: 20 }}
         >
-          <p onClick={sortByCategoryHandler("All")}>All Categories</p>
-          <p onClick={sortByCategoryHandler("Electronics")}>Electronics</p>
-          <p onClick={sortByCategoryHandler("Jewelery")}>Jewelery</p>
-          <p onClick={sortByCategoryHandler("Men's")}>Men's</p>
-          <p onClick={sortByCategoryHandler("Women's")}>Women's</p>
+          <p onClick={() => sortByCategoryHandler("all")}>All Categories</p>
+          <p onClick={() => sortByCategoryHandler("electronics")}>Electronics</p>
+          <p onClick={() => sortByCategoryHandler("jewelery")}>Jewelery</p>
+          <p onClick={() => sortByCategoryHandler("men's clothing")}>Men's</p>
+          <p onClick={() => sortByCategoryHandler("women's clothing")}>Women's</p>
         </Toolbar>
       </AppBar>
     </div>
