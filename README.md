@@ -2,5 +2,4 @@
 
 ## Used React Typescript Redux MUI and more
 
-deploy link: https://frontend-group-project.vercel.app/
-
+deploy link: https://eshop-group-work.vercel.app/
