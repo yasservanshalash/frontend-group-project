@@ -45,25 +45,15 @@ const ProductList = ({ userInput }: { userInput: string }) => {
   }, [dispatch]);
   // RENDER
   return (
-    <div>
-      <div>
+    <div className="productspage">
+      <div className="productspage_btns">
+        <p>Filter: </p>
+        <p>By Name:</p>
         <button onClick={sortAscendingHandler}>Ascending</button>
         <button onClick={sortDescendingHandler}>Descending</button>
+        <p>By Price:</p>
         <button onClick={sortPriceAscendingHandler}>PriceAscending</button>
         <button onClick={sortPriceDescendingHandler}>PriceDescending</button>
-        <button onClick={() => sortByCategoryHandler("all")}>All</button>
-        <button onClick={() => sortByCategoryHandler("electronics")}>
-          SortByCategory
-        </button>
-        <button onClick={() => sortByCategoryHandler("jewelery")}>
-          SortByCategory
-        </button>
-        <button onClick={() => sortByCategoryHandler("men's clothing")}>
-          SortByCategory
-        </button>
-        <button onClick={() => sortByCategoryHandler("women's clothing")}>
-          SortByCategory
-        </button>
       </div>
       <div className="productList">
         {productList.length === 0 ? (
