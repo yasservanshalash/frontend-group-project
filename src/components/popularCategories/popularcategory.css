@@ -1,10 +1,9 @@
 .popularbrand {
-    margin-top: 200px;
-    margin-left: 90px;
-    padding: 12px;
-    object-fit: scale-down;
+  margin-top: 200px;
+  margin-left: 90px;
+  padding: 12px;
+  object-fit: scale-down;
 }
-
-.avatar-image{
-    margin-left: 90px;
+.avatar-image {
+  margin-left: 90px;
 }

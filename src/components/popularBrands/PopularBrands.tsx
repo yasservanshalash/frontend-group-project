@@ -1,4 +1,3 @@
-import React from "react";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
@@ -16,8 +15,13 @@ import BrandImg06 from "../../assets/brandproducts/img66.webp";
 import BrandImg07 from "../../assets/brandproducts/img77.jpg";
 
 const PopularBrands = () => {
+  // RENDER
   return (
-    <Box className="popularbrands" textAlign="center" sx={{ ml: 20, mt: 10, mb: 10 }}>
+    <Box
+      className="popularbrands"
+      textAlign="center"
+      sx={{ ml: 20, mt: 10, mb: 10 }}
+    >
       <Typography
         align="left"
         color="black"

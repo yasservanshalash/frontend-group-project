@@ -9,13 +9,13 @@ import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
+
 import ImageOne from "../../assets/img01.jpg";
 import ImageTwo from "../../assets/img02.jpg";
 import ImageThree from "../../assets/img03.jpg";
 import ImageFour from "../../assets/img04.jpg";
 import ImageFive from "../../assets/img05.jpg";
 import ImageSix from "../../assets/img06.jpg";
-
 import "./slider.css";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
