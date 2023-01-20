@@ -10,10 +10,12 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import HomeIcon from "@mui/icons-material/Home";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import Badge from "@mui/material/Badge";
+import { useDispatch } from "react-redux";
 
 import "./NavBar2.css";
 import { RootState } from "../../redux/store";
 import { useSelector } from "react-redux";
+import { productSliceActions } from "../../redux/slices/productSlice";
 // MUI SWITCH
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -76,6 +78,12 @@ const NavBar2 = ({
     (state: RootState) => state.favoriteList.favorite
   );
   const cartList = useSelector((state: RootState) => state.cartList.cartList);
+  // DISPATCH
+  const dispatch = useDispatch();
+  // SORTING HANDLER
+  const sortByCategoryHandler = (category: string) => {
+    dispatch(productSliceActions.sortByCategory(category));
+  };
   // RENDER
   return (
     <div>
@@ -88,7 +96,9 @@ const NavBar2 = ({
           }}
         >
           <Box>
-            <Link to="/"><h3>eShop</h3></Link>
+            <Link to="/">
+              <h3>eShop</h3>
+            </Link>
           </Box>
           <SearchBar setUserInput={setUserInput} />
           <Box
@@ -122,13 +132,15 @@ const NavBar2 = ({
             />
           </Box>
         </Toolbar>
-        <Toolbar sx={{display: "flex", justifyContent: "space-between", mx: 20}}>
-        <p>All Categories</p>
-        <p>Electronics</p>
-        <p>Jewelery</p>
-        <p>Men's</p>
-        <p>Women's</p>
-          </Toolbar>
+        <Toolbar
+          sx={{ display: "flex", justifyContent: "space-between", mx: 20 }}
+        >
+          <p onClick={sortByCategoryHandler("All")}>All Categories</p>
+          <p onClick={sortByCategoryHandler("Electronics")}>Electronics</p>
+          <p onClick={sortByCategoryHandler("Jewelery")}>Jewelery</p>
+          <p onClick={sortByCategoryHandler("Men's")}>Men's</p>
+          <p onClick={sortByCategoryHandler("Women's")}>Women's</p>
+        </Toolbar>
       </AppBar>
     </div>
   );
