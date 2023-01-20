@@ -1,8 +1,12 @@
-.fav-header {
-  margin-left: 0 auto;
-
-  text-align: center;
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 30px;
+  grid-row-gap: 40px;
+  justify-content: center;
+  justify-items: center;
+  margin: 40px;
 }
-.fav-wrap {
-  margin: 100px 0px;
+.fav-header {
+  text-align: center;
 }
