@@ -19,7 +19,7 @@ const favoriteSlice = createSlice({
   name: "favorite",
   initialState,
   reducers: {
-    // CASES
+    // ADD FAVORITE
     addFavorite: (state, action: PayloadAction<ProductType>) => {
       if (
         state.favorite.find(
@@ -36,6 +36,7 @@ const favoriteSlice = createSlice({
         );
       }
     },
+    // REMOVE FAVORITE
     removeFavorite: (state, action: PayloadAction<ProductType>) => {
       const index = state.favorite.findIndex(
         (item: ProductType) => item.title === action.payload.title
